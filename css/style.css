@@ -1,76 +1,179 @@
+/* Resetting default margin, padding, and box-sizing for all elements */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body {
-    min-height: 100vh;
-    background: #d2d2d2;
+/* User image styling */
+.user-img {
+    width: 50px;
+    border: 1px solid #eee;
 }
 
+/* Sidebar styling */
 .sidebar {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
-    height: 100%;
-    width: 85px;
-    display: flex;
-    flex-direction: column;
-    overflow-x: hidden;
-    background: #000;
-
-    transition: all 0.4s ease;
+    height: 100vh;
+    width: 80px;
+    background-color: #000;
+    transition: all 0.5s ease;
 }
 
+/* Sidebar active state styling */
 .sidebar.active {
-    width: 260px;
+    width: 200px;
 }
 
-.sidebar-header {
+/* Sidebar transition for main content adjustment */
+.sidebar.active ~ .main-content {
+    left: 200px;
+    width: calc(100% - 200px);
+}
+
+/* Button styling inside sidebar */
+.sidebar #btn {
+    position: absolute;
+    color: #fff;
+    top: .4rem;
+    left: 50%;
+    font-size: 1.2rem;
+    line-height: 50px;
+    transform: translateX(-50%);
+    cursor: pointer;
+}
+
+/* Button styling in active state */
+.sidebar.active #btn {
+    left: 90%;
+}
+
+/* Top section of the sidebar */
+.top {
     display: flex;
     align-items: center;
-}
-
-.sidebar-header img {
-    width: 42px;
-    border-radius: 50%;
-    margin-left: 20px;
-    margin-top: 20px;
-}
-
-.sidebar-header h2 {
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: #fff;
-    margin-left: 23px;
-    margin-top: 20px;
-}
-
-.sidebar-links {
-    list-style: none;
-    margin-top: 20px;
-    height: 80%;
-    overflow-y: auto;
-    scrollbar-width: none;
-}
-
-.sidebar-links ul {
+    height: 100px;
     width: 100%;
+    line-height: 50px;
+    border: 1px solid gray;
 }
 
-.sidebar-links li a {
+/* Logo styling within the top section */
+.sidebar .top .logo {
+    color: #fff;
+    display: flex;
+    height: 50px;
+    width: 100%;
+    align-items: center;
+    padding-left: 10px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Logo visibility in active state */
+.sidebar.active .top .logo {
+    opacity: 1;
+}
+
+/* Icon styling inside the logo */
+.top .logo i {
+    min-width: 50px;
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+}
+
+/* Bold text styling */
+.bold {
+    font-weight: 600;
+}
+
+/* Sidebar paragraph visibility */
+.sidebar p {
+    display: none;
+}
+
+.sidebar.active p {
+    display: inline;
+}
+
+/*
+/* List item styling in the sidebar */
+.sidebar ul li {
     display: flex;
     align-items: center;
-    gap: 0 40px;
-    color: #fff;
-    font-weight: 500;
-    padding: 20px 30px;
-    white-space: nowrap;
-    text-decoration: none;
+    height: 50px;
+    line-height: 50px;
+    border: 1px solid gray;
+    list-style-type: none;
 }
 
-.sidebar-links li a:hover {
-    background: #ffffff2d;
+/* Link styling inside list items */
+.sidebar ul li a {
     color: #fff;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    width: 100%; /* Full width to cover the list item */
+    height: 100%; /* Full height to cover the list item */
+}
+
+/* Link hover effect */
+.sidebar ul li a:hover {
+    background-color: #fff;
+    color: #12171e;
+} */
+
+/* Icon styling inside links */
+.sidebar ul li a i {
+    min-width: 50px;
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+}
+
+/* Navigation item styling */
+.sidebar .nav-item {
+    display: none;
+}
+
+.sidebar.active .nav-item {
+    display: inline-block;
+}
+
+/* Tooltip styling */
+.sidebar ul li .tooltip {
+    position: absolute;
+    left: 100px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: .1rem;
+    line-height: 1rem;
+    z-index: 20;
+    display: none;
+    border: 1px solid #000;
+}
+
+/* Tooltip visibility on hover */
+.sidebar ul li:hover .tooltip {
+    display: inline;
+}
+
+/* Tooltip visibility in active state */
+.sidebar.active ul li .tooltip {
+    display: none;
+}
+
+/* Main content styling */
+.main-content {
+    position: relative;
+    background-color: #eee;
+    min-height: 100vh;
+    top: 0;
+    left: 80px;
+    transition: all 0.5s ease;
+    width: calc(100% - 80px);
+    padding: 1rem;
 }
