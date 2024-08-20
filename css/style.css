@@ -138,8 +138,7 @@
 }
 
 .sidebar.close .nav-links li:hover .sub-menu,
-.sidebar.close .nav-links .sub-menu:hover,
-.sidebar.close .nav-links .sub-menu:active {
+.sidebar.close .nav-links .sub-menu:hover {
     display: block;
     pointer-events: auto;
 }
