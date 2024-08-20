@@ -84,7 +84,7 @@
     cursor: pointer;
 }
 
-.sidebar .nav-links li.showMenu i .bxs-chevron-down {
+.sidebar .nav-links li.showMenu i.bxs-chevron-down {
     transform: rotate(-180deg);
 }
 
