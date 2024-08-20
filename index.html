@@ -26,7 +26,7 @@
         </ul>
       </li>
       <li>
-        <div class="icon-link dropdown">
+        <div class="icon-link">
           <a href="#">
             <i class='bx bx-folder-open'></i>
             <span class="link-name">Projects</span>
@@ -59,7 +59,7 @@
   </section>
 
   <script>
-    let arrow = document.querySelectorAll(".dropdown");
+    let arrow = document.querySelectorAll(".icon-link");
     for (var i = 0; i < arrow.length; i++) {
       arrow[i].addEventListener("click", (e)=>{
         let arrowParent = e.target.closest("li");
