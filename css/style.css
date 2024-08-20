@@ -10,10 +10,10 @@
     top: 0;
     left: 0;
     height: 100%;
-    width: 260px;
+    width: 230px;
     background: #000;
     z-index: 100;
-    transition: all 0.5s ease;
+    transition: all 0.2s ease;
 }
 
 .sidebar.close {
@@ -36,23 +36,19 @@
 }
 
 .sidebar .logo-details .logo-name {
+    display: flex;
     font-size: 22px;
     color: #fff;
     font-weight: 600;
-    transition: 0.3s ease;
-    transition-delay: 0.1s;
-}
-
-.sidebar.close .logo-details .logo-name {
-    transition-delay: 0s;
-    opacity: 0;
-    pointer-events: none;
+    overflow: auto;
+    scrollbar-width: none;
 }
 
 .sidebar .nav-links {
     height: 100%;
     padding: 10px 0 150px 0;
     overflow: auto;
+    white-space: nowrap;
 }
 
 .sidebar .nav-links::-webkit-scrollbar {
@@ -81,7 +77,7 @@
     line-height: 50px;
     color: #fff;
     font-size: 20px;
-    transition: all 0.3s ease;
+    transition: all 0.2s ease;
     cursor: pointer;
 }
 
@@ -102,8 +98,7 @@
 }
 
 .sidebar .nav-links li .sub-menu {
-    padding: 6px 6px 15px 80px;
-    margin-top: -10px;
+    padding: 6px 6px 10px 80px;
     background-color: #222;
     display: none;
 }
@@ -131,8 +126,6 @@
     margin-top: 0;
     padding: 10px 20px;
     border-radius: 0 6px 6px 0;
-    transition: 0s;
-    opacity: 0;
     display: block;
     pointer-events: none;
 }
@@ -171,9 +164,9 @@
     position: relative;
     background: gray;
     height: 100vh;
-    left: 260px;
-    width: calc(100% - 260px);
-    transition: all 0.5s ease;
+    left: 230px;
+    width: calc(100% - 230px);
+    transition: all 0.2s ease;
 }
 
 .sidebar.close ~ .home-section {
