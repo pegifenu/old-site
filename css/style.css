@@ -18,7 +18,7 @@ body {
     left: 0;
     height: 100%;
     width: 230px;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.7);
     transition: all 0.2s ease;
     z-index: 1;
 }
@@ -177,7 +177,7 @@ body {
 
 .main-section .bx-menu {
     font-size: 35px;
-    margin: 15px 15px 0px 15px;
+    margin: 15px;
     cursor: pointer;
     color: #fff;
 }
@@ -185,12 +185,13 @@ body {
 .main-section .main-content {
     height: 60px;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     color: #fff;
+    margin: 0 15px;
 }
 
 .main-section .main-content .title {
-    margin: 0 15px;
     font-size: 26px;
     font-weight: 600;
 }
+

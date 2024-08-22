@@ -1,4 +1,4 @@
-$("#main").load("home.html");
+$("#main").load("about.html");
 $("a").on("click", function(event) {
     event.preventDefault();
     let link = $(this).attr("href");
