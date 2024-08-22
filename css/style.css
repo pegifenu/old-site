@@ -29,6 +29,7 @@ body {
     width: 100%;
     display: flex;
     align-items: center;
+    text-decoration: none;
 }
 
 .sidebar .logo-details img {
@@ -46,7 +47,6 @@ body {
     font-weight: 600;
     overflow: auto;
     scrollbar-width: none;
-    text-decoration: none;
 }
 
 .sidebar .nav-links {
