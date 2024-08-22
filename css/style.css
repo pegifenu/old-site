@@ -11,8 +11,6 @@ body {
     background-attachment: fixed;
     background-size: cover;
     image-resolution: 72dpi;
-    height: 1080px;
-    width: 1920px;
 }
 
 .sidebar {
