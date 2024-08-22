@@ -5,15 +5,19 @@
     font-family: "Comic Sans MS";
 }
 
+body {
+    background: lightcoral;
+}
+
 .sidebar {
     position: fixed;
     top: 0;
     left: 0;
     height: 100%;
     width: 230px;
-    background: #000;
-    z-index: 100;
+    background: black;
     transition: all 0.2s ease;
+    z-index: 1;
 }
 
 .sidebar.close {
@@ -134,7 +138,6 @@
     border-radius: 0 6px 6px 0;
     display: none;
     pointer-events: none;
-
 }
 
 .sidebar.close .nav-links li:hover .sub-menu,
@@ -146,7 +149,6 @@
 /* show title if closed */
 .sidebar .nav-links li .sub-menu .link-name {
     display: none;
-    
 }
 
 .sidebar.close .nav-links li .sub-menu .link-name {
@@ -157,16 +159,22 @@
 
 .home-section {
     position: relative;
-    background: gray;
     height: 100vh;
     left: 230px;
     width: calc(100% - 230px);
     transition: all 0.2s ease;
+    background: lightgoldenrodyellow;
 }
 
 .sidebar.close ~ .home-section {
     left: 70px;
     width: calc(100% - 70px);
+}
+
+.home-section .bx-menu {
+    font-size: 35px;
+    margin: 0 15px;
+    cursor: pointer;
 }
 
 .home-section .home-content {
@@ -176,13 +184,8 @@
     color: #000;
 }
 
-.home-section .home-content .bx-menu {
-    font-size: 35px;
+.home-section .home-content .title {
     margin: 0 15px;
-    cursor: pointer;
-}
-
-.home-section .home-content .text {
     font-size: 26px;
     font-weight: 600;
 }
