@@ -1,7 +1,8 @@
+$("#main").load("home.html");
 $("a").on("click", function(event) {
     event.preventDefault();
     let link = $(this).attr("href");
-    $("#home").load(link);
+    $("#main").load(link);
 });
 
 let arrow = document.querySelectorAll(".icon-link");

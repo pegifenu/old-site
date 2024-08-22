@@ -6,7 +6,10 @@
 }
 
 body {
-    background: lightcoral;
+    background: url("/images/nightsky.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
 }
 
 .sidebar {
@@ -15,7 +18,7 @@ body {
     left: 0;
     height: 100%;
     width: 230px;
-    background: black;
+    background: rgba(0, 0, 0, 0.5);
     transition: all 0.2s ease;
     z-index: 1;
 }
@@ -135,7 +138,7 @@ body {
     left: 100%;
     top: 0;
     margin-top: 0;
-    padding: 7px 20px;
+    padding: 6.5px 20px;
     border-radius: 0 6px 6px 0;
     display: none;
     pointer-events: none;
@@ -158,34 +161,35 @@ body {
     display: block;
 }
 
-.home-section {
+.main-section {
     position: relative;
     height: 100vh;
     left: 230px;
     width: calc(100% - 230px);
     transition: all 0.2s ease;
-    background: lightgoldenrodyellow;
+
 }
 
-.sidebar.close ~ .home-section {
+.sidebar.close ~ .main-section {
     left: 70px;
     width: calc(100% - 70px);
 }
 
-.home-section .bx-menu {
+.main-section .bx-menu {
     font-size: 35px;
-    margin: 0 15px;
+    margin: 15px 15px 0px 15px;
     cursor: pointer;
+    color: #fff;
 }
 
-.home-section .home-content {
+.main-section .main-content {
     height: 60px;
     display: flex;
     align-items: center;
-    color: #000;
+    color: #fff;
 }
 
-.home-section .home-content .title {
+.main-section .main-content .title {
     margin: 0 15px;
     font-size: 26px;
     font-weight: 600;
