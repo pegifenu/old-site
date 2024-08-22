@@ -46,6 +46,7 @@ body {
     font-weight: 600;
     overflow: auto;
     scrollbar-width: none;
+    text-decoration: none;
 }
 
 .sidebar .nav-links {
