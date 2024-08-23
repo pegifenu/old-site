@@ -2,7 +2,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Comic Sans MS";
 }
 
 body {
@@ -20,8 +19,10 @@ body {
     height: 100%;
     width: 230px;
     background: rgba(0, 0, 0, 0.7);
+    border: solid;
     transition: all 0.2s ease;
     z-index: 1;
+    font-family: "Comic Sans MS";
 }
 
 .sidebar.close {
@@ -168,6 +169,7 @@ body {
     left: 230px;
     width: calc(100% - 230px);
     transition: all 0.2s ease;
+    font-family: "Comic Sans MS";
 }
 
 .sidebar.close ~ .main-section {
@@ -195,3 +197,23 @@ body {
     font-weight: 600;
 }
 
+/*Projects*/
+
+#escargotModal .modal-content {
+    background: rgba(58,48,130,255) !important;
+    color: white !important;
+    font-family: "Montserrat", sans-serif;
+}
+
+#placeholder .modal-content {
+    background: black !important;
+}
+
+.card {
+    background: rgba(0, 0, 0, 0.7) !important;
+    border: solid !important;
+}
+
+.card-body {
+    color: white !important;    
+}
