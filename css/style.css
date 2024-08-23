@@ -71,8 +71,8 @@ body {
     
 }
 
-.sidebar .nav-links li:hover {
-    background: #222;
+.sidebar .nav-links .nav-link:hover {
+    background: rgba(66, 66, 66, 0.7);
 }
 
 .sidebar .nav-links li .icon-link {
@@ -114,7 +114,6 @@ body {
 
 .sidebar .nav-links li .sub-menu {
     padding: 6px 6px 10px 80px;
-    background-color: #222;
     display: none;
     z-index: 1;
 }
@@ -212,6 +211,10 @@ body {
 .card {
     background: rgba(0, 0, 0, 0.7) !important;
     border: solid !important;
+}
+
+.card:hover {
+    background: rgba(66, 66, 66, 0.7) !important;
 }
 
 .card-body {
