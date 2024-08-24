@@ -200,12 +200,12 @@ body {
 
 /*Projects*/
 
-.filter {
+.search {
     padding-top: 10px;
     padding-bottom: 20px;
 }
 
-.filter .box {
+.search .box {
     background: rgba(0, 0, 0, 0.8);
     border: solid;
     border-color: rgba(60, 60, 60, 0.8);
@@ -216,6 +216,14 @@ body {
 ::placeholder {
     color: white;
     opacity: 0.6;
+}
+
+.not-found {
+    display: none;
+}
+
+.not-found .true {
+    display: block;
 }
 
 #escargotModal .modal-content {
@@ -229,17 +237,23 @@ body {
 }
 
 #card-list {
-    transition: 0.5s;
+    transition: 5s;
+    opacity: 1;
+}
+
+#card-list.hidden {
+    opacity: 0;
 }
 
 .card {
     
     background: rgba(0, 0, 0, 0.8) !important;
     border: solid !important;
+    opacity: 1;
 }
 
 .card.hidden {
-    display: none;
+    opacity: 0;
 
 }
 
