@@ -72,5 +72,7 @@ function filterProject(value) {
         document.getElementsByClassName("title")[0].textContent="Programming Projects";
     } else if (value == "animation") {
         document.getElementsByClassName("title")[0].textContent="Animation Projects";
+    } else {
+        document.getElementsByClassName("title")[0].textContent="All Projects";
     }
 }
