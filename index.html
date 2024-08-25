@@ -19,7 +19,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
-  
 </head>
 
 <body>
@@ -48,8 +47,8 @@
         </div>
         <ul class="sub-menu">
           <li><a class="link-name" href="projects.html">Projects</a></li>
-          <li><a href="projects.html">Programming</a></li>
-          <li><a href="projects.html">Animation</a></li>
+          <li><a href="projects.html" onclick="filterProject('programming')">Programming</a></li>
+          <li><a href="projects.html" onclick="filterProject('animation')">Animation</a></li>
         </ul>
       </li>
       <li class="nav-link">
@@ -70,7 +69,10 @@
     </div>
   </div>
 
+  <script src="https://cdn.jsdelivr.net/npm/muuri@0.9.5/dist/muuri.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/web-animations-js@2.3.2/web-animations.min.js"></script>
   <script src="js/script.js"></script>
+  
 </body>
 
 </html>

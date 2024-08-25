@@ -216,7 +216,6 @@ body {
     border-radius: 0.375rem;
     color: white;
     width: 100%;
-    box-sizing: border-box;
     padding: 10px;
 }
 
@@ -229,7 +228,7 @@ body {
     display: none;
 }
 
-.not-found .true {
+.not-found.true {
     display: block;
 }
 
@@ -243,25 +242,14 @@ body {
     background: black !important;
 }
 
-#card-list {
-    transition: 5s;
-    opacity: 1;
-    display: absolute;
-}
-
-#card-list.hidden {
-    opacity: 0;
-}
-
 .card {
     background: rgba(0, 0, 0, 0.8) !important;
     border: solid !important;
-    opacity: 1;
 }
 
 .card.hidden {
     opacity: 0;
-
+    display: none;
 }
 
 .card:hover {
