@@ -16,7 +16,6 @@ $("a").on("click", function(event) {
             filterProject(category);
         }
     });
-
 });
 
 let arrow = document.querySelectorAll(".icon-link");
@@ -53,7 +52,6 @@ function searchProject() {
     if (!isProjectFound) {
         document.querySelector(".not-found").classList.add("true");
     }
-
 }
 
 function filterProject(value) {
@@ -68,5 +66,11 @@ function filterProject(value) {
         } else {
             cards[i].style.display = "none"; // Hide card
         }
+    }
+
+    if (value == "programming") {
+        document.getElementsByClassName("title")[0].textContent="Programming Projects";
+    } else if (value == "animation") {
+        document.getElementsByClassName("title")[0].textContent="Animation Projects";
     }
 }
