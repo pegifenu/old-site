@@ -6,7 +6,7 @@ $("a").on("click", function(event) {
     let link = $(this).attr("href");
     
     // Check if the clicked anchor tag is a submenu item
-    let isSubMenuItem = $(this).parents().hasClass('sub-menu');
+    let isSubMenuItem = $(this).hasClass('sub-menu-item');
     
     // Perform the load operation
     $("#main").load(link, function() {
