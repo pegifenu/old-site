@@ -187,8 +187,6 @@ body {
 
 .main-section .main-content {
     height: 60px;
-    display: flex;
-    align-items: flex-start;
     color: #fff;
     margin: 0 15px;
 }
