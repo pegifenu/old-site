@@ -1,13 +1,22 @@
 $("#main").load("about.html");
 $("a").on("click", function(event) {
     event.preventDefault();
-    let link = $(this).attr("href");
-    $("#main").load(link);
 
-    if ($(this).parents().hasClass('sub-menu')) {
-        let category = $(this).attr("data-category");
-        filterProject(category)
-    }
+    // Get the link from the clicked anchor tag
+    let link = $(this).attr("href");
+    
+    // Check if the clicked anchor tag is a submenu item
+    let isSubMenuItem = $(this).parents().hasClass('sub-menu');
+    
+    // Perform the load operation
+    $("#main").load(link, function() {
+        if (isSubMenuItem) {
+            // Extract the category from the clicked link
+            let category = $(event.currentTarget).attr("data-category");
+            filterProject(category);
+        }
+    });
+
 });
 
 let arrow = document.querySelectorAll(".icon-link");
