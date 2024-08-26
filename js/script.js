@@ -12,10 +12,21 @@ $("a").on("click", function(event) {
     
     // Perform the load operation
     $("#main").load(link, function() {
-        if (isSubMenuItem) {
+        if (link == "projects.html") {
+
+            var iso = new Isotope( '.row', {
+                itemSelector: '.col',
+                layoutMode: 'fitRows'
+            });
+
+            imagesLoaded( document.querySelector('.row') ).on( 'progress', function() {
+                iso.layout();
+            });
+
             // Extract the category from the clicked link
             let category = $(event.currentTarget).attr("data-category");
-            filterProject(category);
+
+            filterProject(category, iso);
         }
     });
 });
@@ -33,29 +44,43 @@ let sidebarBtn = document.querySelector(".bx-menu");
 sidebarBtn.addEventListener("click", ()=>{
     sidebar.classList.toggle("close");
 });
+/*
+let searchbar = document.querySelector(".main-content .box");
+console.log(searchbar);
+searchbar.addEventListener("keypress", () => {
+    var iso = new Isotope( '.row', {
+        itemSelector: '.col',
+        layoutMode: 'fitRows'
+    });
+    console.log("hi");
+    searchProject(iso);
+});*/
 
 function searchProject() {
-    const input = document.querySelector(".box").value.toUpperCase();
-    const cardContainer = document.querySelector(".card-list");
-    const cards = document.getElementsByClassName("col")[0];
-
-    let isProjectFound = false;
-
     var iso = new Isotope( '.row', {
         itemSelector: '.col',
         layoutMode: 'fitRows'
     });
 
+    var input = document.querySelector(".box").value.toUpperCase();
+    const cardContainer = document.querySelector(".card-list");
+    const cards = document.getElementsByClassName("col")[0];
+
+    let isProjectFound = false;
+
     // Apply the filter function to Isotope
-    iso.arrange({
+    console.log(input);
+
+    iso.arrange({ 
         filter: function( index, item ) {
             var title = item.querySelector(".card .card-body .card-title").innerText.toUpperCase();
             console.log(title);
             //const title = titleElement.innerText.toUpperCase();
-            console.log(title.match(input));
-            return title.match(input); // Use includes to handle partial matches
+            console.log(title.includes(input));
+            return title.includes(input); // Use includes to handle partial matches
         }
     });
+    
     
     /*
     for (let i = 0; i < cards.length; i++) {
@@ -70,21 +95,17 @@ function searchProject() {
             
         }
     }*/
-   /*
+    /*
+
     if (!isProjectFound) {
         document.querySelector(".not-found").classList.add("true");
     }*/
 }
 
-function filterProject(value) {
 
-    var iso = new Isotope( '.row', {
-        itemSelector: '.col',
-        layoutMode: 'fitRows'
-    });
-  
+function filterProject(value, iso) {
     iso.arrange({ filter: "." + value });
-
+  
     if (value == "programming") {
         document.getElementsByClassName("title")[0].textContent="Programming Projects";
     } else if (value == "animation") {
