@@ -1,3 +1,5 @@
+//import autoAnimate from 'https://cdn.jsdelivr.net/npm/@formkit/auto-animate'
+
 $("#main").load("about.html");
 $("a").on("click", function(event) {
     event.preventDefault();
@@ -42,11 +44,11 @@ function searchProject() {
         let title = cards[i].querySelector(".card-body h5.card-title");
         console.log(title);
         if (title.innerText.toUpperCase().indexOf(input) > -1) {
-            cards[i].style.display = "";
+            cards[i].classList.remove("hidden");
             isProjectFound = true;
             document.querySelector(".not-found").classList.remove("true");
         } else {
-            cards[i].style.display = "none";
+            cards[i].classList.add("hidden"); 
         }
     }
     if (!isProjectFound) {
@@ -62,9 +64,10 @@ function filterProject(value) {
         
         // Show or hide the card based on whether its tags include the selected tag
         if (categories.includes(value)) {         
-            cards[i].style.display = "block"; // Show card
+            cards[i].classList.remove("hidden");
         } else {
-            cards[i].style.display = "none"; // Hide card
+            cards[i].classList.add("hidden"); 
+            console.log(cards[i].className);
         }
     }
 
