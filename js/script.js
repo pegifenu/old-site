@@ -36,40 +36,54 @@ sidebarBtn.addEventListener("click", ()=>{
 
 function searchProject() {
     const input = document.querySelector(".box").value.toUpperCase();
-    //const cardContainer = document.querySelector(".card-list");
-    const cards = document.getElementsByClassName("col");
+    const cardContainer = document.querySelector(".card-list");
+    const cards = document.getElementsByClassName("col")[0];
 
     let isProjectFound = false;
+
+    var iso = new Isotope( '.row', {
+        itemSelector: '.col',
+        layoutMode: 'fitRows'
+    });
+
+    // Apply the filter function to Isotope
+    iso.arrange({
+        filter: function( index, item ) {
+            var title = item.querySelector(".card .card-body .card-title").innerText.toUpperCase();
+            console.log(title);
+            //const title = titleElement.innerText.toUpperCase();
+            console.log(title.match(input));
+            return title.match(input); // Use includes to handle partial matches
+        }
+    });
+    
+    /*
     for (let i = 0; i < cards.length; i++) {
         let title = cards[i].querySelector(".card-body h5.card-title");
         console.log(title);
-        if (title.innerText.toUpperCase().indexOf(input) > -1) {
+        if (title.innerText.toUpperCase().indexOf(input) > -1) {            
             cards[i].classList.remove("hidden");
             isProjectFound = true;
             document.querySelector(".not-found").classList.remove("true");
         } else {
             cards[i].classList.add("hidden"); 
+            
         }
-    }
+    }*/
+   /*
     if (!isProjectFound) {
         document.querySelector(".not-found").classList.add("true");
-    }
+    }*/
 }
 
 function filterProject(value) {
-    const cards = document.getElementsByClassName("col");
-    for (let i = 0; i < cards.length; i++) {
-        // Get the tags for this card
-        const categories = cards[i].querySelector(".card").getAttribute("data-categories").split(' ');
-        
-        // Show or hide the card based on whether its tags include the selected tag
-        if (categories.includes(value)) {         
-            cards[i].classList.remove("hidden");
-        } else {
-            cards[i].classList.add("hidden"); 
-            console.log(cards[i].className);
-        }
-    }
+
+    var iso = new Isotope( '.row', {
+        itemSelector: '.col',
+        layoutMode: 'fitRows'
+    });
+  
+    iso.arrange({ filter: "." + value });
 
     if (value == "programming") {
         document.getElementsByClassName("title")[0].textContent="Programming Projects";
