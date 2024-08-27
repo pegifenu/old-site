@@ -47,17 +47,10 @@ $("a").on("click", function(event) {
 const dropdown = document.querySelectorAll(".icon-link-no-arrow");
 for (let i = 0; i < dropdown.length; i++) {
     dropdown[i].addEventListener("click", (e)=>{
-        let subcategories = ["Animation Projects", "Programming Projects"];
-
-        // Get the current page title
-        let titleElement = document.querySelector(".title");
-        let titleText = document.getElementsByClassName("title")[0].textContent;
-
-        
         // Find the closest list item
         let arrowParent = e.target.closest("li");
         if (arrowParent) {
-            // Rule 1: Open the menu if it is closed
+            // Rule 1: Open the menu if it is closed at first load
             if (!arrowParent.classList.contains("showMenu")) {
                 arrowParent.classList.add("showMenu");
             } else {
