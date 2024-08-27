@@ -1,5 +1,7 @@
 var iso;
 var category;
+var isMenuItem = false;
+var isPrevMenuItem = false;
 
 $("#main").load("about.html");
 $("a").on("click", function(event) {
@@ -8,8 +10,13 @@ $("a").on("click", function(event) {
     // Get the link from the clicked anchor tag
     let link = $(this).attr("href");
     
-    // Check if the clicked anchor tag is a submenu item
-    let isSubMenuItem = $(this).hasClass('sub-menu-item');
+    
+    if (isMenuItem) {
+        isPrevMenuItem = true;
+    } else {
+        isPrevMenuItem = false;
+    }
+    isMenuItem = $(this).hasClass('icon-link-no-arrow');
     
     // Perform the load operation
     $("#main").load(link, function() {
@@ -35,9 +42,38 @@ $("a").on("click", function(event) {
     });
 });
 
-const arrow = document.querySelectorAll(".icon-link");
+
+// Manage dropdown while sidebar is opened
+const dropdown = document.querySelectorAll(".icon-link-no-arrow");
+for (let i = 0; i < dropdown.length; i++) {
+    dropdown[i].addEventListener("click", (e)=>{
+        let subcategories = ["Animation Projects", "Programming Projects"];
+
+        // Get the current page title
+        let titleElement = document.querySelector(".title");
+        let titleText = document.getElementsByClassName("title")[0].textContent;
+
+        
+        // Find the closest list item
+        let arrowParent = e.target.closest("li");
+        if (arrowParent) {
+            // Rule 1: Open the menu if it is closed
+            if (!arrowParent.classList.contains("showMenu")) {
+                arrowParent.classList.add("showMenu");
+            } else {
+                // Rule 2: Only toggle if not on a subcategory page
+                if (isPrevMenuItem) {
+                    arrowParent.classList.toggle("showMenu");
+                }
+            }
+        }
+    });
+}
+
+const arrow = document.querySelectorAll(".arrow");
 for (let i = 0; i < arrow.length; i++) {
     arrow[i].addEventListener("click", (e)=>{
+        console.log("hi");
         let arrowParent = e.target.closest("li");
         arrowParent.classList.toggle("showMenu");
     });
@@ -82,7 +118,7 @@ function noResultsCheck() {
 
 function filterProject(value) {
     iso.arrange({ filter: "." + value });
-  
+
     if (value == "programming") {
         document.getElementsByClassName("title")[0].textContent="Programming Projects";
     } else if (value == "animation") {
