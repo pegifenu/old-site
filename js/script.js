@@ -83,6 +83,9 @@ document.addEventListener("DOMContentLoaded", function() {
         }, 200); // Delay in milliseconds
     });
 
+    $('.nav-link').filter(function() {
+        return $(this).children().attr('href') == 'about.html';
+    }).addClass('active');
     $('.nav-links .nav-link').on("click", function() {
         $('.nav-links .nav-link').removeClass('active');
         $(this).addClass('active');
