@@ -62,22 +62,25 @@ function searchProject() {
 
     // Apply the filter function to Isotope
 
-    console.log("hi");
     iso.arrange({ 
         filter: function( index, item ) {
             var title = item.querySelector(".card .card-body .card-title").innerText.toUpperCase();
-            console.log(title);
-            //const title = titleElement.innerText.toUpperCase();
-            console.log(title.includes(input));
             return title.includes(input); // Use includes to handle partial matches
         }
     });
-    
-    /*
 
-    if (!isProjectFound) {
-        document.querySelector(".not-found").classList.add("true");
-    }*/
+    noResultsCheck();
+}
+
+function noResultsCheck() {
+    const noResults = document.querySelector(".not-found");
+
+    if (iso.getFilteredItemElements().length == 0) {
+        noResults.classList.add("true");
+    } else {
+        noResults.classList.remove("true");
+    }
+
 }
 
 
