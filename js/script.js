@@ -50,18 +50,6 @@ sidebarBtn.addEventListener("click", ()=>{
     }, 200); // Delay in milliseconds
 });
 
-/*
-let searchbar = document.querySelector(".main-content .box");
-console.log(searchbar);
-searchbar.addEventListener("keypress", () => {
-    var iso = new Isotope( '.row', {
-        itemSelector: '.col',
-        layoutMode: 'fitRows'
-    });
-    console.log("hi");
-    searchProject(iso);
-});*/
-
 function searchProject() {
     var input = document.querySelector(".box").value.toUpperCase();
     const cardContainer = document.querySelector(".card-list");
@@ -82,20 +70,6 @@ function searchProject() {
         }
     });
     
-  /*  
-    console.log(cards.length);
-    for (let i = 0; i < cards.length; i++) {
-        let title = cards[i].querySelector(".card-body h5.card-title");
-        console.log(title.innerText.toUpperCase().indexOf(input) > -1);
-        if (title.innerText.toUpperCase().indexOf(input) > -1) {            
-            //cards[i].classList.remove("hidden");
-            isProjectFound = true;
-            document.querySelector(".not-found").classList.remove("true");
-        } else {
-            //cards[i].classList.add("hidden"); 
-            
-        }
-    }*/
     /*
 
     if (!isProjectFound) {
