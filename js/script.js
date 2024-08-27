@@ -35,16 +35,16 @@ $("a").on("click", function(event) {
     });
 });
 
-let arrow = document.querySelectorAll(".icon-link");
-for (var i = 0; i < arrow.length; i++) {
+const arrow = document.querySelectorAll(".icon-link");
+for (let i = 0; i < arrow.length; i++) {
     arrow[i].addEventListener("click", (e)=>{
         let arrowParent = e.target.closest("li");
         arrowParent.classList.toggle("showMenu");
     });
 }
 
-let sidebar = document.querySelector(".sidebar");
-let sidebarBtn = document.querySelector(".bx-menu");
+const sidebar = document.querySelector(".sidebar");
+const sidebarBtn = document.querySelector(".bx-menu");
 sidebarBtn.addEventListener("click", ()=>{
     sidebar.classList.toggle("close");
     setTimeout(() => {
@@ -55,14 +55,9 @@ sidebarBtn.addEventListener("click", ()=>{
 });
 
 function searchProject() {
-    var input = document.querySelector(".box").value.toUpperCase();
-    const cardContainer = document.querySelector(".card-list");
-    const cards = document.getElementsByClassName("col");
-
-    let isProjectFound = false;
+    const input = document.querySelector(".box").value.toUpperCase();
 
     // Apply the filter function to Isotope
-
     iso.arrange({ 
         filter: function( index, item ) {
             let title = item.querySelector(".card .card-body .card-title").innerText.toUpperCase();
@@ -84,7 +79,6 @@ function noResultsCheck() {
     }
 
 }
-
 
 function filterProject(value) {
     iso.arrange({ filter: "." + value });
