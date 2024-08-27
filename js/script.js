@@ -16,7 +16,10 @@ $("a").on("click", function(event) {
 
             iso = new Isotope( '.row', {
                 itemSelector: '.col',
-                layoutMode: 'fitRows'
+                layoutMode: 'fitRows',
+                fitRows: {
+                    equalheight: true
+                }
             });
 
             imagesLoaded( document.querySelector('.row') ).on( 'progress', function() {
