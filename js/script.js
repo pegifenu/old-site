@@ -10,8 +10,7 @@ document.addEventListener("DOMContentLoaded", function() {
         event.preventDefault();
 
         // Get the link from the clicked anchor tag
-        let link = $(this).attr("href");
-        
+        let link = $(this).attr("href"); 
         
         if (isMenuItem) {
             isPrevMenuItem = true;
