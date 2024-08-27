@@ -90,6 +90,19 @@ document.addEventListener("DOMContentLoaded", function() {
         $('.nav-links .nav-link').removeClass('active');
         $(this).addClass('active');
     });
+/*
+    const myModalEl = document.getElementById('escargotModal')
+    myModalEl.addEventListener('hidden.bs.modal', event => {
+        console.log("hi");
+        const iframe = document.getElementById('youtubeVideo');
+        const src = iframe.src;
+        iframe.src = ''; // Stop the video by removing the src
+        iframe.src = src; // Restore the src to reload the video when needed
+    })
+
+    $('.modal').on('hide.bs.modal', function () {
+        $('.modal iframe').attr('src', '');
+    });*/
 });
 
 function searchProject() {
