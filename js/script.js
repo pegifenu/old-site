@@ -82,6 +82,11 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         }, 200); // Delay in milliseconds
     });
+
+    $('.nav-links .nav-link').on("click", function() {
+        $('.nav-links .nav-link').removeClass('active');
+        $(this).addClass('active');
+    });
 });
 
 function searchProject() {
