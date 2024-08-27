@@ -1,4 +1,5 @@
 var iso;
+var category;
 
 $("#main").load("about.html");
 $("a").on("click", function(event) {
@@ -27,7 +28,7 @@ $("a").on("click", function(event) {
             });
 
             // Extract the category from the clicked link
-            let category = $(event.currentTarget).attr("data-category");
+            category = $(event.currentTarget).attr("data-category");
 
             filterProject(category);
         }
@@ -64,8 +65,9 @@ function searchProject() {
 
     iso.arrange({ 
         filter: function( index, item ) {
-            var title = item.querySelector(".card .card-body .card-title").innerText.toUpperCase();
-            return title.includes(input); // Use includes to handle partial matches
+            let title = item.querySelector(".card .card-body .card-title").innerText.toUpperCase();
+            let isShown = item.classList.contains(category);
+            return title.includes(input) && isShown; // Use includes to handle partial matches
         }
     });
 
