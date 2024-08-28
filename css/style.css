@@ -23,6 +23,7 @@ body {
     transition: all 0.2s ease;
     z-index: 1;
     font-family: "Comic Sans MS";
+    border-color: rgba(50, 50, 50, 0.8);
 }
 
 .sidebar.close {
@@ -72,6 +73,7 @@ body {
 
 .sidebar .nav-links li.nav-link {
     border-bottom: solid;
+    transition: 0s;
 }
 
 .sidebar .nav-links .nav-link:hover {
@@ -251,7 +253,7 @@ body {
 .card {
     background: rgba(0, 0, 0, 0.8) !important;
     border: solid !important;
-
+    border-color: rgba(50, 50, 50, 0.8) !important;
 }
 
 .card:hover {
