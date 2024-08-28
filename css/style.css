@@ -214,13 +214,19 @@ body {
 
 /* About */
 
+.contacts-list {
+    list-style-type: none;
+    padding-left: 0px;
+    margin-bottom: 5px;
+}
+
 .socials-links {
     display: flex;
 }
 
 .socials-links a {
-    margin: 5px;
     text-decoration: none;
+    margin: 5px 10px 0px 0px;
 }
 
 .socials-links a i,
