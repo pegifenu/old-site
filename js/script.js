@@ -3,6 +3,9 @@ var category;
 var isMenuItem = false;
 var isPrevMenuItem = false;
 
+var isMenu = false;
+var isPrevMenu = false;
+
 document.addEventListener("DOMContentLoaded", function() {
     // Your code here
     $("#main").load("about.html");
@@ -18,29 +21,45 @@ document.addEventListener("DOMContentLoaded", function() {
             isPrevMenuItem = false;
         }
         isMenuItem = $(this).hasClass('icon-link-no-arrow');
-        
-        // Perform the load operation
-        $("#main").load(link, function() {
-            if (link == "projects.html") {
 
-                iso = new Isotope( '.row', {
-                    itemSelector: '.col',
-                    layoutMode: 'fitRows',
-                    fitRows: {
-                        equalheight: true
-                    }
-                });
+        if (isMenu) {
+            isPrevMenu = true;
+        } else {
+            isPrevMenu = false;
+        }
+        isMenu = (link == "projects.html");
 
-                imagesLoaded( document.querySelector('.row') ).on( 'progress', function() {
-                    iso.layout();
-                });
+        if (isPrevMenu && isMenu) {
 
-                // Extract the category from the clicked link
-                category = $(event.currentTarget).attr("data-category");
+            // Extract the category from the clicked link
+            category = $(event.currentTarget).attr("data-category");
 
-                filterProject(category);
-            }
-        });
+            filterProject(category);
+
+        } else {
+
+            $("#main").load(link, function() {
+                if (isMenu) {
+                    iso = new Isotope( '.row', {
+                        itemSelector: '.col',
+                        layoutMode: 'fitRows',
+                        fitRows: {
+                            equalheight: true
+                        }
+                    });
+    
+                    imagesLoaded( document.querySelector('.row') ).on( 'progress', function() {
+                        iso.layout();
+                    });
+    
+                    // Extract the category from the clicked link
+                    category = $(event.currentTarget).attr("data-category");
+    
+                    filterProject(category);
+                }
+            });
+        }
+
     });
 
     // Manage dropdown while sidebar is opened
@@ -107,15 +126,16 @@ document.addEventListener("DOMContentLoaded", function() {
 
 function searchProject() {
     const input = document.querySelector(".box").value.toUpperCase();
-
+    console.log(category);
     // Apply the filter function to Isotope
     iso.arrange({ 
         filter: function( index, item ) {
             let title = item.querySelector(".card .card-body .card-title").innerText.toUpperCase();
-            let isShown = item.classList.contains(category);
+            let isShown = item.classList.contains(category) || category == "all";
             return title.includes(input) && isShown; // Use includes to handle partial matches
         }
     });
+    console.log(iso);
 
     noResultsCheck();
 }
@@ -137,7 +157,6 @@ function filterProject(value) {
     } else {
         iso.arrange({ filter: "*" });
     }
-    
 
     if (value == "programming") {
         document.getElementsByClassName("title")[0].textContent="Programming Projects";
