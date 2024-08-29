@@ -39,7 +39,11 @@ document.addEventListener("DOMContentLoaded", function() {
         } else {
             $("#main").load(link, function() {
                 if (isMenu) {
+                    // Extract the category from the clicked link
+                    category = $(event.currentTarget).attr("data-category");
+
                     iso = new Isotope( '.row', {
+                        filter: '.' + category,
                         itemSelector: '.col',
                         layoutMode: 'fitRows',
                         fitRows: {
@@ -51,13 +55,10 @@ document.addEventListener("DOMContentLoaded", function() {
                         iso.layout();
                     });
     
-                    // Extract the category from the clicked link
-                    category = $(event.currentTarget).attr("data-category");
-    
                     filterProject(category);
                 }
             });
-            
+
         }
 
     });
@@ -131,7 +132,7 @@ function searchProject() {
     iso.arrange({ 
         filter: function( index, item ) {
             let title = item.querySelector(".card .card-body .card-title").innerText.toUpperCase();
-            let isShown = item.classList.contains(category) || category == "all";
+            let isShown = item.classList.contains(category) || category == "col";
             return title.includes(input) && isShown; // Use includes to handle partial matches
         }
     });
@@ -151,14 +152,14 @@ function noResultsCheck() {
 
 }
 
-function filterProject(value) {
-    if (value != "all") {
-        iso.arrange({ filter: "." + value });
+function filterProject(category) {
+    if (category != "col") {
+        iso.arrange({ filter: "." + category });
     } else {
         iso.arrange({ filter: "*" });
     }
 
-    if (value == "programming") {
+    if (category == "programming") {
         document.getElementsByClassName("title")[0].textContent="Programming Projects";
     } else if (value == "animation") {
         document.getElementsByClassName("title")[0].textContent="Animation Projects";
