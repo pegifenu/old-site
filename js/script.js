@@ -132,7 +132,12 @@ function noResultsCheck() {
 }
 
 function filterProject(value) {
-    iso.arrange({ filter: "." + value });
+    if (value != "all") {
+        iso.arrange({ filter: "." + value });
+    } else {
+        iso.arrange({ filter: "*" });
+    }
+    
 
     if (value == "programming") {
         document.getElementsByClassName("title")[0].textContent="Programming Projects";
