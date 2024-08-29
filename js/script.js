@@ -37,7 +37,6 @@ document.addEventListener("DOMContentLoaded", function() {
             filterProject(category);
 
         } else {
-
             $("#main").load(link, function() {
                 if (isMenu) {
                     iso = new Isotope( '.row', {
@@ -58,6 +57,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     filterProject(category);
                 }
             });
+            
         }
 
     });
