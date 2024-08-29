@@ -29,19 +29,15 @@ document.addEventListener("DOMContentLoaded", function() {
         }
         isMenu = (link == "projects.html");
 
+        // Extract the category from the clicked link
+        category = $(event.currentTarget).attr("data-category");
+
         if (isPrevMenu && isMenu) {
-
-            // Extract the category from the clicked link
-            category = $(event.currentTarget).attr("data-category");
-
             filterProject(category);
 
         } else {
             $("#main").load(link, function() {
                 if (isMenu) {
-                    // Extract the category from the clicked link
-                    category = $(event.currentTarget).attr("data-category");
-
                     iso = new Isotope( '.row', {
                         filter: '.' + category,
                         itemSelector: '.col',
