@@ -99,12 +99,17 @@ body {
 
 .sidebar .nav-links li i {
     height: 50px;
+    min-width: 70px;
     text-align: center;
     line-height: 50px;
     color: #fff;
     font-size: 20px;
     transition: all 0.2s ease;
     cursor: pointer;
+}
+
+.sidebar.close .nav-links li i {
+    justify-content: space-around;
 }
 
 .sidebar .nav-links li.showMenu i.bxs-chevron-down {
