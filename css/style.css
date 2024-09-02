@@ -249,6 +249,7 @@ body {
 .socials-links a img {
     width: 43px;
     height: 43px;
+    box-sizing: border-box;
 }
 
 .socials-links a i:hover,
@@ -293,13 +294,12 @@ body {
 #escargotModal .modal-content {
     background: rgba(58,48,130,255) !important;
     color: white !important;
-    font-family: "Montserrat", sans-serif;
+    font-family: "Montserrat";
 }
 
 #placeholder .modal-content {
     background: black !important;
 }
-
 
 .card {
     background: rgba(0, 0, 0, 0.8) !important;
