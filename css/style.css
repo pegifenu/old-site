@@ -247,9 +247,8 @@ body {
 }
 
 .socials-links a img {
-    width: 43px;
-    height: 43px;
-    box-sizing: border-box;
+    height: 1em;
+    width: auto;
 }
 
 .socials-links a i:hover,
