@@ -12,6 +12,11 @@ body {
     image-resolution: 72dpi;
 }
 
+@font-face {
+    font-family: Avenir;
+    src: url("/fonts/avenir-lt-pro-cufonfonts/AvenirLTProLight.otf") format("opentype");
+}
+
 .sidebar {
     position: fixed;
     top: 0;
@@ -22,7 +27,7 @@ body {
     border: solid;
     transition: all 0.2s ease;
     z-index: 1;
-    font-family: "Comic Sans MS";
+    font-family: "Avenir", "Comic Sans MS";
     border-color: rgba(50, 50, 50, 0.8);
 }
 
@@ -179,7 +184,7 @@ body {
     left: 230px;
     width: calc(100% - 230px);
     transition: all 0.2s ease;
-    font-family: "Comic Sans MS";
+    font-family: "Avenir", "Comic Sans MS";
 }
 
 .sidebar.close ~ .main-section {
