@@ -260,6 +260,7 @@ body {
     height: 43px;
     width: 43px;
     vertical-align: middle;
+    line-height: 1;
 }
 
 .socials-links a i:hover,
