@@ -102,8 +102,8 @@ document.addEventListener("DOMContentLoaded", function() {
     $('.nav-link').filter(function() {
         return $(this).children().attr('href') == 'about.html';
     }).addClass('active');
-    $('.nav-links .nav-link').on("click", function() {
-        $('.nav-links .nav-link').removeClass('active');
+    $('.nav-links a').on("click", function() {
+        $('.nav-links a').removeClass('active');
         $(this).addClass('active');
     });
 /*
