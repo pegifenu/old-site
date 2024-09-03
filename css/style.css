@@ -185,6 +185,7 @@ body {
 .main-section {
     position: relative;
     height: 100vh;
+    overflow: scroll;
     left: 230px;
     width: calc(100% - 230px);
     transition: all 0.2s ease;
@@ -219,6 +220,20 @@ body {
     font-size: 22px;
     font-weight: 600;
     margin-bottom: 5px;
+}
+
+.announcement {
+    position: sticky;
+    top: 0;
+    height: auto;
+    width: 100%;
+    background-color: rgb(246, 222, 45);
+    z-index: 1;
+    padding: 5px;
+}
+
+ .announcement p {
+    margin: 0px;
 }
 
 /* About */
@@ -257,8 +272,8 @@ body {
 }
 
 .socials-links a img {
-    height: 43px;
     width: 43px;
+    height: 43px;
     vertical-align: middle;
     line-height: 1;
 }
