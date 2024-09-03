@@ -85,7 +85,7 @@ body {
     background: rgba(50, 50, 50, 0.8);
 }
 
-.sidebar .nav-links a.active {
+.sidebar .nav-links .nav-link.active {
     background: rgba(50, 50, 50, 0.8);
 }
 

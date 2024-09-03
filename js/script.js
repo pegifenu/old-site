@@ -103,8 +103,8 @@ document.addEventListener("DOMContentLoaded", function() {
         return $(this).children().attr('href') == 'about.html';
     }).addClass('active');
     $('.nav-links a').on("click", function() {
-        $('.nav-links a').removeClass('active');
-        $(this).addClass('active');
+        $('.nav-links .nav-link').removeClass('active');
+        $(this).closest('.nav-link').addClass('active');
     });
 /*
     const myModalEl = document.getElementById('escargotModal')
