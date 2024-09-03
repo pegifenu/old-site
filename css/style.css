@@ -26,7 +26,7 @@ body {
     background: rgba(0, 0, 0, 0.8);
     border: solid;
     transition: all 0.2s ease;
-    z-index: 1;
+    z-index: 2;
     font-family: "Avenir", "Comic Sans MS";
     border-color: rgba(50, 50, 50, 0.8);
 }
@@ -133,7 +133,7 @@ body {
 .sidebar .nav-links li .sub-menu {
     padding: 6px 6px 10px 80px;
     display: none;
-    z-index: 2;
+    z-index: 1;
 }
 
 .sidebar .nav-links li.showMenu .sub-menu {
@@ -166,7 +166,8 @@ body {
 }
 
 .sidebar.close .nav-links li:hover .sub-menu,
-.sidebar.close .nav-links .sub-menu:hover {
+.sidebar.close .nav-links .sub-menu:hover,
+.sidebar.close .nav-links li:active .sub-menu {
     display: block;
     pointer-events: auto;
 }
