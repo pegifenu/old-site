@@ -3,8 +3,8 @@ var category;
 var isMenuItem = false;
 var isPrevMenuItem = false;
 
-var isMenu = false;
-var isPrevMenu = false;
+var isProjectsMenu = false;
+var isPrevProjectsMenu = false;
 
 document.addEventListener("DOMContentLoaded", function() {
     // Your code here
@@ -22,22 +22,22 @@ document.addEventListener("DOMContentLoaded", function() {
         }
         isMenuItem = $(this).hasClass('icon-link-no-arrow');
 
-        if (isMenu) {
-            isPrevMenu = true;
+        if (isProjectsMenu) {
+            isPrevProjectsMenu = true;
         } else {
-            isPrevMenu = false;
+            isPrevProjectsMenu = false;
         }
-        isMenu = (link == "projects.html");
+        isProjectsMenu = (link == "projects.html");
 
         // Extract the category from the clicked link
         category = $(event.currentTarget).attr("data-category");
 
-        if (isPrevMenu && isMenu) {
+        if (isPrevProjectsMenu && isProjectsMenu) {
             filterProject(category);
 
         } else {
             $("#main").load(link, function() {
-                if (isMenu) {
+                if (isProjectsMenu) {
                     iso = new Isotope( '.row', {
                         filter: '.' + category,
                         itemSelector: '.col',
@@ -110,19 +110,29 @@ document.addEventListener("DOMContentLoaded", function() {
         $('.nav-links .nav-link').removeClass('active');
         $(this).closest('.nav-link').addClass('active');
     });
-/*
-    const myModalEl = document.getElementById('escargotModal')
-    myModalEl.addEventListener('hidden.bs.modal', event => {
-        console.log("hi");
-        const iframe = document.getElementById('youtubeVideo');
-        const src = iframe.src;
-        iframe.src = ''; // Stop the video by removing the src
-        iframe.src = src; // Restore the src to reload the video when needed
-    })
 
-    $('.modal').on('hide.bs.modal', function () {
-        $('.modal iframe').attr('src', '');
-    });*/
+    // Stop any YouTube videos playing in modal if modal is closed.
+    let checkForModal = setInterval(function() {
+        const myModal = document.getElementById('escargotModal');
+        
+        if (myModal) {
+            clearInterval(checkForModal);
+            // Listen for the modal hide event
+            myModal.addEventListener('hidden.bs.modal', function (event) {
+                // Find the iframe inside the modal
+                const iframe = myModal.querySelector('iframe');
+                if (iframe) {
+                    // Store the current src of the iframe
+                    const src = iframe.src;
+                    // Clear the src to stop the video
+                    iframe.src = '';
+                    // Reset the src to restart the video if the modal is opened again
+                    iframe.src = src;
+                }
+            });
+        }
+    });
+
 });
 
 function searchProject() {
