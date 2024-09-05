@@ -311,8 +311,7 @@ body {
     align-items: center;
 }
 
-.socials-links a i,
-.socials-links a img {
+.socials-links a i {
     border: solid;
     border-color: rgba(60, 60, 60, 0.8);
     background-color: rgba(0, 0, 0, 0.8);   
@@ -323,15 +322,7 @@ body {
     font-size: 30px;
 }
 
-.socials-links a img {
-    width: 43px;
-    height: 43px;
-    vertical-align: middle;
-    line-height: 1;
-}
-
-.socials-links a i:hover,
-.socials-links a img:hover {
+.socials-links a i:hover {
     background: rgba(60, 60, 60, 0.8);
 }
 
