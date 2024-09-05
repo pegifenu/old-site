@@ -133,6 +133,7 @@ body {
     scrollbar-width: none;
 }
 
+
 .sidebar .nav-links li .sub-menu {
     padding: 6px 6px 10px 80px;
     display: none;
@@ -141,6 +142,13 @@ body {
 
 .sidebar .nav-links li.showMenu .sub-menu {
     display: block;
+}
+
+.sidebar.close .nav-links li:hover .sub-menu,
+.sidebar.close .nav-links li:active .sub-menu, 
+.sidebar.close .nav-links .sub-menu:hover {
+    display: block;
+    pointer-events: auto;
 }
 
 .sidebar .nav-links li .sub-menu a {
@@ -243,15 +251,6 @@ body {
     .sidebar.close ~ .main-section {
         left: 0px;
         width: 100%;
-    }
-}
-
-@media (pointer: fine) {
-    .sidebar.close .nav-links li:hover .sub-menu,
-    .sidebar.close .nav-links li:active .sub-menu, 
-    .sidebar.close .nav-links .sub-menu:hover {
-        display: block;
-        pointer-events: auto;
     }
 }
 
