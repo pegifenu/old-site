@@ -168,11 +168,13 @@ body {
     border: solid;
 }
 
-.sidebar.close .nav-links li:hover .sub-menu,
-.sidebar.close .nav-links .sub-menu:hover,
-.sidebar.close .nav-links li:active .sub-menu {
-    display: block;
-    pointer-events: auto;
+@media (pointer: fine) {
+    .sidebar.close .nav-links li:hover .sub-menu,
+    .sidebar.close .nav-links li:active .sub-menu, 
+    .sidebar.close .nav-links .sub-menu:hover {
+        display: block;
+        pointer-events: auto;
+    }
 }
 
 /* show title if closed */
