@@ -61,19 +61,23 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Manage dropdown while sidebar is opened
     const dropdown = document.querySelectorAll(".icon-link-no-arrow");
+    let activeDropdown = null;
     for (let i = 0; i < dropdown.length; i++) {
         dropdown[i].addEventListener("click", (e)=>{
             // Find the closest list item
             let arrowParent = e.target.closest("li");
+
             if (arrowParent) {
-                // Rule 1: Open the menu if it is closed at first load
-                if (!arrowParent.classList.contains("showMenu")) {
-                    arrowParent.classList.add("showMenu");
-                } else {
-                    // Rule 2: Only toggle if not on a subcategory page
-                    if (isPrevMenuItem) {
-                        arrowParent.classList.toggle("showMenu");
+                // Toggle the submenu if the current category is selected
+                if (activeDropdown && activeDropdown == arrowParent && isPrevMenuItem) {
+                    activeDropdown.classList.toggle("showMenu");
+                
+                    if (!arrowParent.classList.contains("showMenu")) {
+                        activeDropdown = null;
                     }
+                } else {
+                    arrowParent.classList.add("showMenu");
+                    activeDropdown = arrowParent;
                 }
             }
         });

@@ -22,7 +22,7 @@ body {
     top: 0;
     left: 0;
     height: 100%;
-    width: 230px;
+    width: 220px;
     background: rgba(0, 0, 0, 0.8);
     border: solid;
     transition: all 0.2s ease;
@@ -189,9 +189,9 @@ body {
 .main-section {
     position: relative;
     height: 100vh;
-    overflow: scroll;
-    left: 230px;
-    width: calc(100% - 230px);
+    overflow-y: scroll;
+    left: 220px;
+    width: calc(100% - 220px);
     transition: all 0.2s ease;
     font-family: "Avenir", "Comic Sans MS";
 }
@@ -211,7 +211,7 @@ body {
 .main-section .main-content {
     height: 60px;
     color: #fff;
-    margin: 0 15px;
+    padding: 0 15px;
 }
 
 .main-section .main-content .title {
@@ -240,7 +240,41 @@ body {
     margin: 0px;
 }
 
+/* Home */
+
+#home .cover-img {
+    /*background-image: url(/images/test.jpg);*/
+    background: rgba(0, 0, 0, 0.8);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed; /* This keeps the background fixed in place */
+    height: 100vh;
+    width: 100%;
+    z-index: -1;
+
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10%;
+}
+
+#home .cover-img p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5%;
+    font-weight: 600;
+}
+
 /* About */
+
+#about #first-paragraph {
+    font-weight: 600;
+}
 
 .contacts-list {
     list-style-type: none;
