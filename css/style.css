@@ -241,7 +241,7 @@ body {
     margin: 0px;
 }
 
-@media (max-width: 786px) {
+@media (max-width: 480px) {
     .sidebar.close {
         width: 0px;
         opacity: 0%;
