@@ -6,6 +6,8 @@ var isPrevMenuItem = false;
 var isProjectsMenu = false;
 var isPrevProjectsMenu = false;
 
+var isPortfolioMenu = false;
+
 document.addEventListener("DOMContentLoaded", function() {
     // Your code here
     $("#main").load("about.html");
@@ -28,6 +30,7 @@ document.addEventListener("DOMContentLoaded", function() {
             isPrevProjectsMenu = false;
         }
         isProjectsMenu = (link == "projects.html");
+        isPortfolioMenu = (link == "portfolio.html");
 
         // Extract the category from the clicked link
         category = $(event.currentTarget).attr("data-category");
@@ -37,14 +40,19 @@ document.addEventListener("DOMContentLoaded", function() {
 
         } else {
             $("#main").load(link, function() {
-                if (isProjectsMenu) {
+                if (isProjectsMenu || isPortfolioMenu) {
+
                     iso = new Isotope( '.row', {
                         filter: '.' + category,
                         itemSelector: '.col',
+                        masonry: {
+                            horizontalOrder: true
+                        }
+                        /*
                         layoutMode: 'fitRows',
                         fitRows: {
                             equalheight: true
-                        }
+                        }*/
                     });
     
                     imagesLoaded( document.querySelector('.row') ).on( 'progress', function() {
@@ -169,11 +177,14 @@ function filterProject(category) {
         iso.arrange({ filter: "*" });
     }
 
-    if (category == "programming") {
-        document.getElementsByClassName("title")[0].textContent="Programming Projects";
-    } else if (category == "animation") {
-        document.getElementsByClassName("title")[0].textContent="Animation Projects";
-    } else {
-        document.getElementsByClassName("title")[0].textContent="All Projects";
+    if (isProjectsMenu) {
+        if (category == "programming") {
+            document.getElementsByClassName("title")[0].textContent="Programming Projects";
+        } else if (category == "animation") {
+            document.getElementsByClassName("title")[0].textContent="Animation Projects";
+        } else {
+            document.getElementsByClassName("title")[0].textContent="All Projects";
+        }
     }
+
 }

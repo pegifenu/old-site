@@ -370,6 +370,10 @@ body {
     background: black !important;
 }
 
+.modal.fade .modal-dialog {
+    transform: none !important;
+}
+
 .card {
     background: rgba(0, 0, 0, 0.8) !important;
     border: solid !important;
@@ -421,5 +425,5 @@ body {
     padding-top:100%
   }
 
-/* Fun Stuff */
+/* Portfolio */
 
