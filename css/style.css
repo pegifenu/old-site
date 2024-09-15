@@ -246,6 +246,7 @@ body {
         width: 0px;
         overflow: hidden;
         pointer-events: none;
+        border: none;
     }
 
     .sidebar.close ~ .main-section {
