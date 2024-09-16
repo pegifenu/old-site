@@ -192,7 +192,7 @@ body {
 
 .main-section {
     position: relative;
-    height: 100vh;
+    min-height: 100vh;
     overflow-y: scroll;
     -webkit-overflow-scrolling: touch;
     left: 220px;
