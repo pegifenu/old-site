@@ -10,6 +10,7 @@ body {
     background-attachment: fixed;
     background-size: cover;
     image-resolution: 72dpi;
+    pointer-events: none;
 }
 
 @font-face {
@@ -18,6 +19,7 @@ body {
 }
 
 .sidebar {
+    pointer-events: auto;
     position: fixed;
     top: 0;
     left: 0;
@@ -191,6 +193,7 @@ body {
 }
 
 .main-section {
+    pointer-events: auto;
     position: relative;
     min-height: 100vh;
     overflow-y: scroll;
