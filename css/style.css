@@ -5,10 +5,6 @@
 }
 
 body {
-    background: url("/images/nightskysmall.jpg");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
     image-resolution: 72dpi;
     pointer-events: none;
     overflow-y: scroll;
