@@ -11,6 +11,7 @@ body {
     background-size: cover;
     image-resolution: 72dpi;
     pointer-events: none;
+    overflow-y: auto;
 }
 
 @font-face {
@@ -195,8 +196,6 @@ body {
 .main-section {
     pointer-events: auto;
     position: relative;
-    overflow-y: scroll;
-    touch-action: auto;
     left: 220px;
     width: calc(100% - 220px);
     transition: all 0.2s ease;
