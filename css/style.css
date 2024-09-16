@@ -194,6 +194,7 @@ body {
     position: relative;
     height: 100vh;
     overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
     left: 220px;
     width: calc(100% - 220px);
     transition: all 0.2s ease;
