@@ -217,7 +217,7 @@ body {
 }
 
 .main-section .main-content {
-    height: 60px;
+    min-height: 100vh;
     color: #fff;
     padding: 0 15px;
 }
