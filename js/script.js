@@ -154,7 +154,6 @@ function searchProject() {
             return title.includes(input) && isShown; // Use includes to handle partial matches
         }
     });
-    console.log(iso);
 
     noResultsCheck();
 }
