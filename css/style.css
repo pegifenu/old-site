@@ -12,6 +12,7 @@ body {
     image-resolution: 72dpi;
     pointer-events: none;
     overflow-y: scroll;
+    height: 100vh;
 }
 
 body:before {
@@ -228,7 +229,6 @@ body:before {
 }
 
 .main-section .main-content {
-    min-height: 100vh;
     scrollbar-width: none;
     color: #fff;
     padding: 0 15px;
