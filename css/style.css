@@ -195,13 +195,13 @@ body {
 .main-section {
     pointer-events: auto;
     position: relative;
-    min-height: 100vh;
     overflow-y: scroll;
     touch-action: auto;
     left: 220px;
     width: calc(100% - 220px);
     transition: all 0.2s ease;
     font-family: "Avenir", "Comic Sans MS";
+    overflow: visible;
 }
 
 .sidebar.close ~ .main-section {
@@ -218,6 +218,7 @@ body {
 
 .main-section .main-content {
     min-height: 100vh;
+    scrollbar-width: none;
     color: #fff;
     padding: 0 15px;
 }
