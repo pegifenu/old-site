@@ -115,8 +115,14 @@ document.addEventListener("DOMContentLoaded", function() {
         return $(this).children().attr('href') == 'about.html';
     }).addClass('active');
     $('.nav-links a').on("click", function() {
+        $('.sub-menu-item').removeClass('active');
         $('.nav-links .nav-link').removeClass('active');
         $(this).closest('.nav-link').addClass('active');
+    });
+
+    $('.sub-menu-item').on("click", function() {
+        $('.sub-menu-item').removeClass('active');
+        $(this).addClass('active');
     });
 
     // Stop any YouTube videos playing in modal if modal is closed.

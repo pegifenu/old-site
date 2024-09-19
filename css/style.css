@@ -40,14 +40,15 @@ body:before {
     height: 100%;
     width: 220px;
     background: rgba(0, 0, 0, 0.8);
-    border: solid;
+    border-right: solid;
+    border-width: 1px;
     transition: all 0.2s ease;
     z-index: 2;
     font-family: "Avenir", "Comic Sans MS";
 }
 
 .sidebar.close {
-    width: 70px;
+    width: 71px;
 }
 
 .sidebar .logo-details {
@@ -65,7 +66,7 @@ body:before {
     width: 30px;
     object-fit: cover;
     border-radius: 100%;
-    margin: 18.5px;
+    margin: 20px;
 }
 
 .sidebar .logo-details .logo-name {
@@ -120,7 +121,7 @@ body:before {
 
 .sidebar .nav-links li i {
     height: 50px;
-    min-width: 67px;
+    min-width: 70px;
     text-align: center;
     line-height: 50px;
     color: #fff;
@@ -150,7 +151,7 @@ body:before {
 
 
 .sidebar .nav-links li .sub-menu {
-    padding: 6px 6px 10px 80px;
+    padding: 0px;
     display: none;
     z-index: 1;
 }
@@ -166,15 +167,25 @@ body:before {
     pointer-events: auto;
 }
 
+.sidebar .nav-links li .sub-menu li a {
+    padding-left: 80px;
+}
+
+.sidebar.close .nav-links li .sub-menu li a {
+    padding-left: 0px;
+}
+
 .sidebar .nav-links li .sub-menu a {
     color: #fff;
     font-size: 15px;
     padding: 5px 0;
     white-space: nowrap;
     opacity: 0.6;
+    width: 100%;
 }
 
-.sidebar .nav-links li .sub-menu a:hover {
+.sidebar .nav-links li .sub-menu a:hover,
+.sidebar .nav-links li .sub-menu a.active {
     opacity: 1;
 }
 
@@ -189,9 +200,9 @@ body:before {
     pointer-events: none;
     background: rgba(0, 0, 0, 0.8);
     border: solid;
+    border-width: 1px;
 }
 
-/* show title if closed */
 .sidebar .nav-links li .sub-menu .link-name {
     display: none;
 }
@@ -314,6 +325,7 @@ body:before {
 
 .socials-links a i {
     border: solid;
+    border-width: 1px;
     border-color: rgb(33, 37, 41);
     background-color: rgba(0, 0, 0, 0.8);   
     color: #fff;
@@ -343,6 +355,7 @@ body:before {
     border: solid;
     border-color: rgb(33, 37, 41);
     border-radius: 0.375rem;
+    border-width: 1px;
     color: white;
     width: 100%;
     padding: 10px;
@@ -378,6 +391,7 @@ body:before {
 .card {
     background: rgba(0, 0, 0, 0.8) !important;
     border: solid !important;
+    border-width: 1px !important;
     border-color: rgb(33, 37, 41) !important;
 }
 
