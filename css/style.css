@@ -58,6 +58,7 @@ body:before {
     align-items: center;
     text-decoration: none;
     border-bottom: solid;
+    border-width: 1px;
     overflow: hidden;
 }
 
@@ -94,6 +95,7 @@ body:before {
 
 .sidebar .nav-links li.nav-link {
     border-bottom: solid;
+    border-width: 1px;
     transition: 0s;
 }
 
@@ -442,30 +444,55 @@ body:before {
 
 /* Portfolio */
 
-#portfolio-content .modal .modal-content {
-    text-align: center;
+.main-section .main-content .portfolio-content {
+    width: 100%;
+}
+
+.portfolio-content .modal-dialog,
+.portfolio-content .modal-content {
+    /* 80% of window height */
+    height: 90%;
+}
+
+.portfolio-content .modal .modal-content {
     background-color: black;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+
 }
 
-#portfolio-content .modal img {
-    width: 90%;
+.portfolio-content .modal .modal-content .modal-body {
+    display: flex;
+    justify-content: center;
+    text-align: center;
 }
 
-#portfolio-content .modal .prev,
-#portfolio-content .modal .next {
+.portfolio-content .modal img {
+    max-width: 90%;
+    object-fit: contain;
+}
+
+.portfolio-content .modal .prev,
+.portfolio-content .modal .next {
+    display: flex; /* Use flexbox for centering the arrow */
+    justify-content: center;
+    align-items: center; /* Center vertically */
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%); /* Center vertically */
+    top: 0; /* Align to top */
+    bottom: 0; /* Align to bottom */
     color: #fff;
     text-decoration: none;
     cursor: pointer;
-    z-index: 1050; /* Ensure arrows are above other content */
+    z-index: 1; /* Ensure arrows are above other content */
+    width: calc(5% + 1rem); /* Adjust width as needed */
+
 }
 
 .prev {
-    left: 3%; /* Adjust distance from the left edge */
+    left: 0; /* Adjust distance from the left edge */
 }
 
 .next {
-    right: 3%; /* Adjust distance from the right edge */
+    right: 0; /* Adjust distance from the right edge */
 }

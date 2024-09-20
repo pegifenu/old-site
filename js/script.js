@@ -8,6 +8,9 @@ var isPrevProjectsMenu = false;
 
 var isPortfolioMenu = false;
 
+let currMenu = null;
+let prevMenu = null;
+
 document.addEventListener("DOMContentLoaded", function() {
     // Your code here
     $("#main").load("about.html");
@@ -24,6 +27,9 @@ document.addEventListener("DOMContentLoaded", function() {
         }
         isMenuItem = $(this).hasClass('icon-link-no-arrow');
 
+        prevMenu = currMenu;
+        currMenu = $(this).closest(".nav-link");
+
         if (isProjectsMenu) {
             isPrevProjectsMenu = true;
         } else {
@@ -32,16 +38,16 @@ document.addEventListener("DOMContentLoaded", function() {
         isProjectsMenu = (link == "projects.html");
         isPortfolioMenu = (link == "portfolio.html");
 
+        let isDropdownMenu = isProjectsMenu || isPortfolioMenu;
+
         // Extract the category from the clicked link
         category = $(event.currentTarget).attr("data-category");
 
-        if (isPrevProjectsMenu && isProjectsMenu) {
+        if (prevMenu && (prevMenu.is(currMenu)) && isDropdownMenu) {
             filterProject(category);
-
         } else {
             $("#main").load(link, function() {
-                if (isProjectsMenu || isPortfolioMenu) {
-
+                if (isDropdownMenu) {
                     iso = new Isotope( '.row', {
                         filter: '.' + category,
                         itemSelector: '.col',
@@ -171,7 +177,6 @@ function noResultsCheck() {
 }
 
 function filterProject(category) {
-    console.log(category);
     if (category != "col") {
         iso.arrange({ filter: "." + category });
     } else {
@@ -188,16 +193,26 @@ function filterProject(category) {
         }
     }
 
+    if (isPortfolioMenu) {
+        if (category == "test-category") {
+            document.getElementsByClassName("title")[0].textContent="Category Portfolio";
+        } else {
+            document.getElementsByClassName("title")[0].textContent="Portfolio";
+        }
+    }
 }
 
 function plusSlides(direction) {
+
     let portfolioFilteredItems = iso.getFilteredItemElements();
 
     let index = 0;
+    let currItemModal;
     let currModalInstance;
+    
     for (let i = 0; i < portfolioFilteredItems.length; i++) {
         let currItem = portfolioFilteredItems[i].querySelector(".card");
-        let currItemModal = document.querySelector(currItem.getAttribute('data-bs-target'));
+        currItemModal = document.querySelector(currItem.getAttribute('data-bs-target'));
         currModalInstance = bootstrap.Modal.getOrCreateInstance(currItemModal);
         if (currItemModal.classList.contains("show")) {
             index = i;
@@ -205,27 +220,18 @@ function plusSlides(direction) {
         }
     }
 
-    if (direction == 1) {
-        if (index < portfolioFilteredItems.length - 1) {
-            currModalInstance.hide();
-
-            let nextItem = portfolioFilteredItems[index + 1].querySelector(".card");
-            let nextItemModal = document.querySelector(nextItem.getAttribute('data-bs-target'));
-            let nextModalInstance = bootstrap.Modal.getOrCreateInstance(nextItemModal);
-            nextModalInstance.show();
-
-            index += 1;
-        }
-    } else if (direction == -1) {
-        if (index > 0) {
-            currModalInstance.hide();
-
-            let prevItem = portfolioFilteredItems[index - 1].querySelector(".card");
-            let prevItemModal = document.querySelector(prevItem.getAttribute('data-bs-target'));
-            let prevModalInstance = bootstrap.Modal.getOrCreateInstance(prevItemModal);
-            prevModalInstance.show();
-
-            index -= 1;
-        }
+    if (index == 0 && direction == -1) {
+        direction = portfolioFilteredItems.length - 1;
+    } else if (index == portfolioFilteredItems.length - 1 && direction == 1) {
+        direction = -index;
     }
+
+    let nextItem = portfolioFilteredItems[index + direction].querySelector(".card");
+    let nextItemModal = document.querySelector(nextItem.getAttribute('data-bs-target'));
+    let nextModalInstance = bootstrap.Modal.getOrCreateInstance(nextItemModal);
+    
+    currModalInstance.hide();
+    nextModalInstance.show();
+
+    index += direction;
 }
