@@ -442,3 +442,30 @@ body:before {
 
 /* Portfolio */
 
+#portfolio-content .modal .modal-content {
+    text-align: center;
+    background-color: black;
+}
+
+#portfolio-content .modal img {
+    width: 90%;
+}
+
+#portfolio-content .modal .prev,
+#portfolio-content .modal .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%); /* Center vertically */
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+    z-index: 1050; /* Ensure arrows are above other content */
+}
+
+.prev {
+    left: 3%; /* Adjust distance from the left edge */
+}
+
+.next {
+    right: 3%; /* Adjust distance from the right edge */
+}

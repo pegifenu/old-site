@@ -48,11 +48,6 @@ document.addEventListener("DOMContentLoaded", function() {
                         masonry: {
                             horizontalOrder: true
                         }
-                        /*
-                        layoutMode: 'fitRows',
-                        fitRows: {
-                            equalheight: true
-                        }*/
                     });
     
                     imagesLoaded( document.querySelector('.row') ).on( 'progress', function() {
@@ -176,6 +171,7 @@ function noResultsCheck() {
 }
 
 function filterProject(category) {
+    console.log(category);
     if (category != "col") {
         iso.arrange({ filter: "." + category });
     } else {
@@ -192,4 +188,44 @@ function filterProject(category) {
         }
     }
 
+}
+
+function plusSlides(direction) {
+    let portfolioFilteredItems = iso.getFilteredItemElements();
+
+    let index = 0;
+    let currModalInstance;
+    for (let i = 0; i < portfolioFilteredItems.length; i++) {
+        let currItem = portfolioFilteredItems[i].querySelector(".card");
+        let currItemModal = document.querySelector(currItem.getAttribute('data-bs-target'));
+        currModalInstance = bootstrap.Modal.getOrCreateInstance(currItemModal);
+        if (currItemModal.classList.contains("show")) {
+            index = i;
+            break;
+        }
+    }
+
+    if (direction == 1) {
+        if (index < portfolioFilteredItems.length - 1) {
+            currModalInstance.hide();
+
+            let nextItem = portfolioFilteredItems[index + 1].querySelector(".card");
+            let nextItemModal = document.querySelector(nextItem.getAttribute('data-bs-target'));
+            let nextModalInstance = bootstrap.Modal.getOrCreateInstance(nextItemModal);
+            nextModalInstance.show();
+
+            index += 1;
+        }
+    } else if (direction == -1) {
+        if (index > 0) {
+            currModalInstance.hide();
+
+            let prevItem = portfolioFilteredItems[index - 1].querySelector(".card");
+            let prevItemModal = document.querySelector(prevItem.getAttribute('data-bs-target'));
+            let prevModalInstance = bootstrap.Modal.getOrCreateInstance(prevItemModal);
+            prevModalInstance.show();
+
+            index -= 1;
+        }
+    }
 }
