@@ -486,7 +486,13 @@ body:before {
     cursor: pointer;
     z-index: 1; /* Ensure arrows are above other content */
     width: calc(5% + 1rem); /* Adjust width as needed */
+    opacity: 0.5;
+    font-size: 1.5em;
+}
 
+.portfolio-content .modal .prev:hover,
+.portfolio-content .modal .next:hover {
+    opacity: 1;
 }
 
 .prev {
