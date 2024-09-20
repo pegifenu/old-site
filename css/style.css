@@ -10,6 +10,7 @@ body {
     overflow-y: auto;
     overflow-x: hidden;
     height: 100vh;
+    font-family: "Avenir", "Comic Sans MS";
 }
 
 body:before {
@@ -224,6 +225,7 @@ body:before {
     transition: all 0.2s ease;
     font-family: "Avenir", "Comic Sans MS";
     overflow: visible;
+    height: 100%;
 }
 
 .sidebar.close ~ .main-section {
@@ -254,6 +256,19 @@ body:before {
     font-size: 22px;
     font-weight: 600;
     margin-bottom: 5px;
+}
+
+#copyheart {
+    opacity: 0.6; 
+    text-decoration: none; 
+    position: absolute; 
+    bottom: 0; 
+    color: white;
+    padding: 15px;
+}
+
+#copyheart:hover {
+    opacity: 1;
 }
 
 @media (max-width: 450px) {

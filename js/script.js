@@ -14,7 +14,7 @@ let prevMenu = null;
 document.addEventListener("DOMContentLoaded", function() {
     // Your code here
     $("#main").load("about.html");
-    $("a").on("click", function(event) {
+    $(".sidebar ul a").on("click", function(event) {
         event.preventDefault();
 
         // Get the link from the clicked anchor tag
