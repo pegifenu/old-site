@@ -1,12 +1,12 @@
-var iso;
-var category;
-var isMenuItem = false;
-var isPrevMenuItem = false;
+let iso;
+let category;
+let isMenuItem = false;
+let isPrevMenuItem = false;
 
-var isProjectsMenu = false;
-var isPrevProjectsMenu = false;
+let isProjectsMenu = false;
+let isPrevProjectsMenu = false;
 
-var isPortfolioMenu = false;
+let isPortfolioMenu = false;
 
 let currMenu = null;
 let prevMenu = null;
