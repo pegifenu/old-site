@@ -249,7 +249,7 @@ body:before {
 .main-section .main-content .title {
     font-size: 26px;
     font-weight: 600;
-    margin-bottom: 5px;
+    margin-bottom: 15px;
 }
 
 .main-section .main-content .title2 {
@@ -265,6 +265,7 @@ body:before {
     bottom: 0; 
     color: white;
     padding: 15px;
+    font-size: 15px;
 }
 
 #copyheart:hover {
@@ -364,7 +365,6 @@ body:before {
 }
 
 .search {
-    padding-top: 10px;
     padding-bottom: 20px;
 }
 
