@@ -224,9 +224,7 @@ body:before {
     width: calc(100% - 220px);
     transition: all 0.2s ease;
     font-family: "Avenir", "Comic Sans MS";
-    overflow: visible;
     height: 100vh;
-    overflow: auto;
 }
 
 .sidebar.close ~ .main-section {
@@ -260,13 +258,14 @@ body:before {
 }
 
 #copyheart {
-    display: flex;
-    bottom: 0;
+    position: absolute; 
+    bottom: 0; 
     opacity: 0.6; 
     text-decoration: none; 
     color: white;
-    padding: 15px;
-    font-size: 15px;
+    font-size: 12px;
+    width: 100%;
+    padding: 10px;
 }
 
 #copyheart:hover {
