@@ -155,7 +155,8 @@ body:before {
 
 
 .sidebar .nav-links li .sub-menu {
-    padding: 0px;
+    padding-left: 0px;
+    padding-bottom: 5px;
     display: none;
     z-index: 1;
 }
