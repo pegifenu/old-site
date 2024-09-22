@@ -153,7 +153,6 @@ body:before {
     scrollbar-width: none;
 }
 
-
 .sidebar .nav-links li .sub-menu {
     padding-left: 0px;
     padding-bottom: 5px;
@@ -284,6 +283,12 @@ body:before {
         left: 0px;
         width: 100%;
     }
+
+    .sidebar.close #copyheart {
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
 }
 
 /* Home */
