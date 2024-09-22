@@ -273,7 +273,7 @@ body:before {
     opacity: 1;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 450px) {
     .sidebar.close {
         width: 0px;
         pointer-events: none;
