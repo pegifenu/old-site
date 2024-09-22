@@ -266,6 +266,7 @@ body:before {
     font-size: 12px;
     width: 100%;
     padding: 5px;
+    overflow: hidden;
 }
 
 #copyheart:hover {
@@ -285,7 +286,6 @@ body:before {
     }
 
     .sidebar.close #copyheart {
-        overflow: hidden;
         white-space: nowrap;
     }
 
