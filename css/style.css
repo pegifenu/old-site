@@ -29,6 +29,27 @@ body:before {
     background-size: cover;
 }
 
+/* width */
+::-webkit-scrollbar {
+    width: 0.75em;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+background: rgba(0, 0, 0);
+border: 1px solid rgb(33, 37, 41, 0.8);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+background: rgb(33, 37, 41);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+background: rgb(255, 255, 255, 0.6);
+}
+
 @font-face {
     font-family: Avenir;
     src: url("/fonts/avenir-lt-pro-cufonfonts/AvenirLTProLight.otf") format("opentype");
@@ -351,7 +372,7 @@ body:before {
 .socials-links a i {
     border: solid;
     border-width: 1px;
-    border-color: rgb(33, 37, 41);
+    border-color: rgb(33, 37, 41, 0.8);
     background-color: rgba(0, 0, 0, 0.8);   
     color: #fff;
     border-radius: 0.375rem;
@@ -377,7 +398,7 @@ body:before {
 .search .box {
     background: rgba(0, 0, 0, 0.8);
     border: solid;
-    border-color: rgb(33, 37, 41);
+    border-color: rgb(33, 37, 41, 0.8);
     border-radius: 0.375rem;
     border-width: 1px;
     color: white;
@@ -407,7 +428,7 @@ body:before {
 
 #placeholder .modal-content {
     background: black !important;
-    border: 1px solid rgb(33, 37, 41);
+    border: 1px solid rgb(33, 37, 41, 0.8);
 }
 
 .modal.fade .modal-dialog {
@@ -418,7 +439,7 @@ body:before {
     background: rgba(0, 0, 0, 0.8) !important;
     border: solid !important;
     border-width: 1px !important;
-    border-color: rgb(33, 37, 41) !important;
+    border-color: rgb(33, 37, 41, 0.8) !important;
 }
 
 .card:hover {
@@ -480,7 +501,7 @@ body:before {
 
 .portfolio-content .modal .modal-content {
     background-color: black;
-    border: 1px solid rgb(33, 37, 41);
+    border: 1px solid rgb(33, 37, 41, 0.8);
 }
 
 .portfolio-content .modal .modal-content .modal-body {
