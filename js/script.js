@@ -126,28 +126,7 @@ document.addEventListener("DOMContentLoaded", function() {
         $(this).addClass('active');
     });
 
-    // Stop any YouTube videos playing in modal if modal is closed.
-    let checkForModal = setInterval(function() {
-        const myModal = document.getElementById('escargotModal');
-        
-        if (myModal) {
-            clearInterval(checkForModal);
-            // Listen for the modal hide event
-            myModal.addEventListener('hidden.bs.modal', function (event) {
-                // Find the iframe inside the modal
-                const iframe = myModal.querySelector('iframe');
-                if (iframe) {
-                    // Store the current src of the iframe
-                    const src = iframe.src;
-                    // Clear the src to stop the video
-                    iframe.src = '';
-                    // Reset the src to restart the video if the modal is opened again
-                    iframe.src = src;
-                }
-            });
-        }
-    });
-
+    stopModalVideo();
 });
 
 function searchProject() {
@@ -216,6 +195,28 @@ function playVideo() {
             });
         }
     });
+}
+
+function stopModalVideo() {
+    document.body.addEventListener('hidden.bs.modal', function (event) {
+      if (event.target.classList.contains('modal')) {
+        const modal = event.target;
+        
+        // Handle YouTube iframes
+        const iframes = modal.querySelectorAll('iframe[src*="youtube.com"]');
+        iframes.forEach(iframe => {
+          const src = iframe.src;
+          iframe.src = '';
+          iframe.src = src;
+        });
+  
+        // Handle HTML5 videos
+        const videos = modal.querySelectorAll('video');
+        videos.forEach(video => {
+          video.currentTime = 0;
+        });
+      }
+    }, true);
 }
 
 function plusSlides(direction) {
