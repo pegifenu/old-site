@@ -3,12 +3,12 @@
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4" id="card-list" onmouseover="playVideo()">
         <div class="col test-category">
             <div class="card" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#item1">
-                <video src="images/art_portfolio/sats_part69.mp4" class="card-img" muted loop></video>
+                <video src="images/art_portfolio/sats_part69.mp4" class="card-img" loop muted playsinline></video>
             </div>
         </div>
         <div class="col">
             <div class="card" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#item2">
-                <video src="images/art_portfolio/boardwalk_outro2.mp4" class="card-img" muted loop></video>
+                <video src="images/art_portfolio/boardwalk_outro2.mp4" class="card-img" loop muted playsinline></video>
             </div>
         </div>
         <div class="col test-category">
@@ -31,7 +31,7 @@
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <video autoplay loop muted>
+                    <video autoplay loop muted playsinline>
                         <source src="images/art_portfolio/sats_part69.mp4"/>
                     </video>
                     <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
@@ -56,7 +56,7 @@
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <video autoplay loop muted>
+                    <video autoplay loop muted playsinline>
                         <source src="images/art_portfolio/boardwalk_outro2.mp4"/>
                     </video>
                     <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
