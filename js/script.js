@@ -202,6 +202,22 @@ function filterProject(category) {
     }
 }
 
+function playVideo() {
+    document.querySelectorAll('.portfolio-content .card').forEach(card => {
+        const video = card.querySelector("video");
+        if (video) {
+            card.addEventListener('mouseenter', () => {
+                video.play();
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                video.pause();
+                video.currentTime = 0;
+            });
+        }
+    });
+}
+
 function plusSlides(direction) {
 
     let portfolioFilteredItems = iso.getFilteredItemElements();
