@@ -183,10 +183,10 @@ function filterProject(category) {
 
 function playVideo() {
     // Check if the device supports hover
-    const isHoverDevice = window.matchMedia("(hover: hover)").matches;
+    //const isHoverDevice = window.matchMedia("(hover: hover)").matches;
     document.querySelectorAll('.portfolio-content .card').forEach(card => {
         const video = card.querySelector("video");
-        if (video && isHoverDevice) {
+        if (video /*&& isHoverDevice*/) {
             card.addEventListener('mouseenter', () => {
                 video.play();
             });
