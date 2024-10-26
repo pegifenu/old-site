@@ -207,15 +207,15 @@ function stopModalVideo() {
         // Handle YouTube iframes
         const iframes = modal.querySelectorAll('iframe[src*="youtube.com"]');
         iframes.forEach(iframe => {
-          const src = iframe.src;
-          iframe.src = '';
-          iframe.src = src;
+            const src = iframe.src;
+            iframe.src = '';
+            iframe.src = src;
         });
   
         // Handle HTML5 videos
         const videos = modal.querySelectorAll('video');
         videos.forEach(video => {
-          video.currentTime = 0;
+            video.currentTime = 0;
         });
       }
     }, true);
