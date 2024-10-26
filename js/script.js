@@ -195,8 +195,6 @@ function playVideo() {
                 video.pause();
                 video.currentTime = 0;
             });
-        } else if (video && !isHoverDevice) {
-            video.pause();
         }
     });
 }
