@@ -184,12 +184,10 @@ function filterProject(category) {
 }
 
 function playVideo() {
-    // Check if the device supports hover
-    //const isHoverDevice = window.matchMedia("(hover: hover)").matches;
     document.querySelectorAll('.portfolio-content .card').forEach(card => {
         const video = card.querySelector("video");
 
-        if (video /*&& isHoverDevice*/) {
+        if (video) {
             video.muted = true;
 
             card.addEventListener('pointerenter', () => {
@@ -258,6 +256,8 @@ function plusSlides(direction) {
     let nextItem = portfolioFilteredItems[index + direction].querySelector(".card");
     let nextItemModal = document.querySelector(nextItem.getAttribute('data-bs-target'));
     let nextModalInstance = bootstrap.Modal.getOrCreateInstance(nextItemModal);
+
+    stopModalVideo();
     
     currModalInstance.hide();
     nextModalInstance.show();
