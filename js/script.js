@@ -200,6 +200,11 @@ function playVideo() {
                 video.pause();
                 video.currentTime = 0;
             });
+
+            card.addEventListener('touchend', () => {
+                video.pause();
+                video.currentTime = 0;
+            });
         }
     });
 }
