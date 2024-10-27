@@ -191,7 +191,8 @@ function playVideo() {
 
         if (video /*&& isHoverDevice*/) {
             video.muted = true;
-            video.load();
+            //video.load();
+            video.play();
 
             card.addEventListener('pointerenter', () => {
                 video.play();
