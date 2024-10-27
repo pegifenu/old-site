@@ -190,6 +190,8 @@ function playVideo() {
         const video = card.querySelector("video");
 
         if (video /*&& isHoverDevice*/) {
+            video.muted = true;
+
             card.addEventListener('mouseenter', () => {
                 video.play();
             });
@@ -221,7 +223,7 @@ function stopModalVideo() {
             video.currentTime = 0;
         });
       }
-    }, true);
+    });
 }
 
 function plusSlides(direction) {
