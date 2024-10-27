@@ -62,6 +62,10 @@ document.addEventListener("DOMContentLoaded", function() {
     
                     filterProject(category);
                 }
+                if (isPortfolioMenu) {
+                    playVideo();
+                }
+                stopModalVideo();
             });
 
         }
@@ -125,8 +129,6 @@ document.addEventListener("DOMContentLoaded", function() {
         $('.sub-menu-item').removeClass('active');
         $(this).addClass('active');
     });
-
-    stopModalVideo();
 });
 
 function searchProject() {
@@ -186,6 +188,7 @@ function playVideo() {
     //const isHoverDevice = window.matchMedia("(hover: hover)").matches;
     document.querySelectorAll('.portfolio-content .card').forEach(card => {
         const video = card.querySelector("video");
+
         if (video /*&& isHoverDevice*/) {
             card.addEventListener('mouseenter', () => {
                 video.play();
