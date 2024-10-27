@@ -192,11 +192,11 @@ function playVideo() {
         if (video /*&& isHoverDevice*/) {
             video.muted = true;
 
-            card.addEventListener('mouseenter', () => {
+            card.addEventListener('pointerenter', () => {
                 video.play();
             });
             
-            card.addEventListener('mouseleave', () => {
+            card.addEventListener('pointerleave', () => {
                 video.pause();
                 video.currentTime = 0;
             });
