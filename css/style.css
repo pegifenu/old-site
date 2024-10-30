@@ -369,7 +369,8 @@ background: rgb(255, 255, 255, 0.6);
     align-items: center;
 }
 
-.socials-links a i {
+.socials-links a i,
+.socials-links a svg {
     border: solid;
     border-width: 1px;
     border-color: rgb(33, 37, 41, 0.8);
@@ -379,6 +380,8 @@ background: rgb(255, 255, 255, 0.6);
     padding: 5px;
     fill: #fff;
     font-size: 30px;
+    width: 1.5em;
+    height: 1.5em;
 }
 
 .socials-links a i:hover {
