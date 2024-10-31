@@ -43,6 +43,8 @@ document.addEventListener("DOMContentLoaded", function() {
         // Extract the category from the clicked link
         category = $(event.currentTarget).attr("data-category");
 
+        // Filter cards depending on category selected
+        // Only use the last Isotope object if in the same dropdown
         if (prevMenu && (prevMenu.is(currMenu)) && isDropdownMenu) {
             filterProject(category);
         } else {
@@ -55,7 +57,22 @@ document.addEventListener("DOMContentLoaded", function() {
                             horizontalOrder: true
                         }
                     });
+
+                    // Reload Isotope layout when all videos loaded
+                    const videos = document.querySelectorAll('video.card-img');
+
+                    let loadedCount = 0
+                    videos.forEach((video) => {
+                        video.addEventListener('loadeddata', () => {
+                            loadedCount++;
+                            if (loadedCount == videos.length) {
+                                iso.layout();
+                                console.log("loaded")
+                            }
+                        });
+                    });
     
+                    // Reload Isotope layout when all images loaded
                     imagesLoaded( document.querySelector('.row') ).on( 'progress', function() {
                         iso.layout();
                     });
@@ -157,6 +174,10 @@ function noResultsCheck() {
 
 }
 
+function toTitleCase(str) {
+    return str.toLowerCase().replace(/\b\w/g, (char) => char.toUpperCase());
+}  
+
 function filterProject(category) {
     if (category != "col") {
         iso.arrange({ filter: "." + category });
@@ -164,23 +185,20 @@ function filterProject(category) {
         iso.arrange({ filter: "*" });
     }
 
+    let menuName = ""
     if (isProjectsMenu) {
-        if (category == "programming") {
-            document.getElementsByClassName("title")[0].textContent="Programming Projects";
-        } else if (category == "animation") {
-            document.getElementsByClassName("title")[0].textContent="Animation Projects";
-        } else {
-            document.getElementsByClassName("title")[0].textContent="All Projects";
-        }
+        menuName = "Projects"
+    } else if (isPortfolioMenu) {
+        menuName = "Portfolio"
     }
 
-    if (isPortfolioMenu) {
-        if (category == "test-category") {
-            document.getElementsByClassName("title")[0].textContent="Category Portfolio";
+    document.querySelectorAll(".title").forEach(title => {
+        if (category == "col") {
+            title.textContent="All " + menuName;
         } else {
-            document.getElementsByClassName("title")[0].textContent="Portfolio";
+            title.textContent=toTitleCase(category) + " " + menuName;
         }
-    }
+    });
 }
 
 function playVideo() {
