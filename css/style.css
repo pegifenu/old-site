@@ -514,12 +514,6 @@ background: rgb(255, 255, 255, 0.6);
     position: absolute;
 }
 
-.portfolio-content .modal-dialog,
-.portfolio-content .modal-content {
-    /* 80% of window height */
-    min-height: 80%;
-}
-
 .portfolio-content .modal .modal-content {
     background-color: black;
     border: 1px solid rgb(33, 37, 41, 0.8);
