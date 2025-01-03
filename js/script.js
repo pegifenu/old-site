@@ -11,6 +11,10 @@ let isPortfolioMenu = false;
 let currMenu = null;
 let prevMenu = null;
 
+// Code is currently very messy. I will either overhaul the
+// website using current tools or migrate to an entirely different
+// framework.
+
 document.addEventListener("DOMContentLoaded", function() {
     // Your code here
     $("#main").load("about.html");
