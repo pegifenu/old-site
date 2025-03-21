@@ -413,6 +413,7 @@ background: rgb(255, 255, 255, 0.6);
 
 #gameboxd-modal .modal-content {
     background: rgb(13,17,23) !important;
+    border: 1px solid rgb(33, 37, 41, 0.8);
 }
 
 #escargot-modal .modal-content {
