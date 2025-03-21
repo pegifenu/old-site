@@ -9,8 +9,10 @@ body {
     pointer-events: none;
     overflow-y: auto;
     overflow-x: hidden;
-    height: 100vh;
     font-family: "Avenir", "Comic Sans MS";
+    min-height: 100vh; /* Ensures body takes at least the full viewport height */
+    display: flex;
+    flex-direction: column;
 }
 
 body:before {
@@ -254,7 +256,6 @@ background: rgb(255, 255, 255, 0.6);
     width: calc(100% - 220px);
     transition: all 0.2s ease;
     font-family: "Avenir", "Comic Sans MS";
-    height: 100vh;
 }
 
 .sidebar.close ~ .main-section {
