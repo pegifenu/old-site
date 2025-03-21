@@ -50,7 +50,9 @@ document.addEventListener("DOMContentLoaded", function() {
         // Filter cards depending on category selected
         // Only use the last Isotope object if in the same dropdown
         if (prevMenu && (prevMenu.is(currMenu)) && isDropdownMenu) {
+
             filterProject(category);
+            iso.layout();
         } else {
             $("#main").load(link, function() {
                 if (isDropdownMenu) {

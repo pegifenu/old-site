@@ -402,7 +402,11 @@ background: rgb(255, 255, 255, 0.6);
     display: block;
 }
 
-#escargotModal .modal-content {
+#gameboxd-modal .modal-content {
+    background: rgb(13,17,23) !important;
+}
+
+#escargot-modal .modal-content {
     background: rgba(58,48,130,255) !important;
     color: white !important;
     font-family: "Montserrat";
