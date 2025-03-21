@@ -55,10 +55,19 @@ background: rgb(255, 255, 255, 0.6);
     src: url("/fonts/avenir-lt-pro-cufonfonts/AvenirLTProLight.otf") format("opentype");
 }
 
+.notice {
+    background: rgb(243,204,5);
+    z-index: 3;
+    position: sticky;
+    top: 0;
+    padding-left:10px;
+    padding-right: 10px;
+    width: 100%;
+}
+
 .sidebar {
     pointer-events: auto;
     position: fixed;
-    top: 0;
     left: 0;
     height: 100%;
     width: 220px;
