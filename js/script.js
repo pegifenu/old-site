@@ -6,7 +6,7 @@ let isPrevMenuItem = false;
 let isProjectsMenu = false;
 let isPrevProjectsMenu = false;
 
-let isPortfolioMenu = false;
+let isGalleryMenu = false;
 
 let currMenu = null;
 let prevMenu = null;
@@ -40,9 +40,9 @@ document.addEventListener("DOMContentLoaded", function() {
             isPrevProjectsMenu = false;
         }
         isProjectsMenu = (link == "projects.html");
-        isPortfolioMenu = (link == "portfolio.html");
+        isGalleryMenu = (link == "gallery.html");
 
-        let isDropdownMenu = isProjectsMenu || isPortfolioMenu;
+        let isDropdownMenu = isProjectsMenu || isGalleryMenu;
 
         // Extract the category from the clicked link
         category = $(event.currentTarget).attr("data-category");
@@ -85,7 +85,7 @@ document.addEventListener("DOMContentLoaded", function() {
     
                     filterProject(category);
                 }
-                if (isPortfolioMenu) {
+                if (isGalleryMenu) {
                     playVideo();
                 }
                 stopModalVideo();
@@ -194,8 +194,8 @@ function filterProject(category) {
     let menuName = ""
     if (isProjectsMenu) {
         menuName = "Projects"
-    } else if (isPortfolioMenu) {
-        menuName = "Portfolio"
+    } else if (isGalleryMenu) {
+        menuName = "Gallery"
     }
 
     document.querySelectorAll(".title").forEach(title => {
@@ -208,7 +208,7 @@ function filterProject(category) {
 }
 
 function playVideo() {
-    document.querySelectorAll('.portfolio-content .card').forEach(card => {
+    document.querySelectorAll('.gallery-content .card').forEach(card => {
         const video = card.querySelector("video");
 
         if (video) {
@@ -255,14 +255,14 @@ function stopModalVideo() {
 
 function plusSlides(direction) {
 
-    let portfolioFilteredItems = iso.getFilteredItemElements();
+    let galleryFilteredItems = iso.getFilteredItemElements();
 
     let index = 0;
     let currItemModal;
     let currModalInstance;
     
-    for (let i = 0; i < portfolioFilteredItems.length; i++) {
-        let currItem = portfolioFilteredItems[i].querySelector(".card");
+    for (let i = 0; i < galleryFilteredItems.length; i++) {
+        let currItem = galleryFilteredItems[i].querySelector(".card");
         currItemModal = document.querySelector(currItem.getAttribute('data-bs-target'));
         currModalInstance = bootstrap.Modal.getOrCreateInstance(currItemModal);
         if (currItemModal.classList.contains("show")) {
@@ -272,12 +272,12 @@ function plusSlides(direction) {
     }
 
     if (index == 0 && direction == -1) {
-        direction = portfolioFilteredItems.length - 1;
-    } else if (index == portfolioFilteredItems.length - 1 && direction == 1) {
+        direction = galleryFilteredItems.length - 1;
+    } else if (index == galleryFilteredItems.length - 1 && direction == 1) {
         direction = -index;
     }
 
-    let nextItem = portfolioFilteredItems[index + direction].querySelector(".card");
+    let nextItem = galleryFilteredItems[index + direction].querySelector(".card");
     let nextItemModal = document.querySelector(nextItem.getAttribute('data-bs-target'));
     let nextModalInstance = bootstrap.Modal.getOrCreateInstance(nextItemModal);
 
